@@ -4,8 +4,11 @@ const RssFeedService = require("./services/rss-feed-service");
 const app = express()
 const port = 3000
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
+const nasaRssFeed = new RssFeedService(NASA_RSS_FEED);
+
+app.get('/', async (req, res) => {
+  const podcast = await nasaRssFeed.buildPodcast();
+  res.json(podcast);
 })
 
 app.listen(port, () => {
