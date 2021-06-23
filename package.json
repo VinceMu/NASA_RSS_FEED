@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "dayjs": "^1.10.5",
     "express": "^4.17.1",
     "nodemon": "^2.0.7",
     "rss-parser": "^3.12.0"
